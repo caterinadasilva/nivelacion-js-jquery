@@ -21,6 +21,13 @@ $(document).ready( function(){
 */
 function renderHighlightedRecipes(recipesArray) {
 	console.log('Recipes: ', recipesArray);
+	
+	
+	var highlightedRecipes = recipesArray.filter(function(index) {
+		return index.highlighted;
+	});
+	console.log('Higlighted Recipes: ', highlightedRecipes);
+	renderRecipe(highlightedRecipes);
 }
 
 /*
