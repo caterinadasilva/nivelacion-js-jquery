@@ -22,12 +22,14 @@ $(document).ready( function(){
 function renderHighlightedRecipes(recipesArray) {
 	console.log('Recipes: ', recipesArray);
 	
-	
 	var highlightedRecipes = recipesArray.filter(function(index) {
 		return index.highlighted;
 	});
 	console.log('Higlighted Recipes: ', highlightedRecipes);
-	renderRecipe(highlightedRecipes);
+
+	highlightedRecipes.forEach( function(recipe) {
+		renderRecipe(recipe);
+	} );
 }
 
 /*
@@ -38,6 +40,32 @@ function renderHighlightedRecipes(recipesArray) {
 */
 function renderRecipe(recipe) {
 	console.log('Voy a pintar la receta: ', recipe);
+
+	// Creando elementos HTML
+	var recetaLink = $("<a>").addClass('item-recipe').attr('href', '#');
+
+	var attributionSpan = $("<span>").addClass('attribution');
+	recetaLink.append(attributionSpan);
+	var imgName = 'assets/img/recipes/320x350/'+ recipe.name +'.jpg';
+	console.log(imgName);
+	var imagen = $("img").attr('src', imgName);
+	recetaLink.append(imagen);
+	console.log(recetaLink);
+	//por alguna razón, sólo me imprime la imagen del último artículo solamente
+
+	var titleRecipeSpan = $("<span>").addClass('title-recipe').text(recipe.title);
+	attributionSpan.append(titleRecipeSpan);
+	var metadataRecipeSpan = $("<span>").addClass('metadata-recipe');
+	attributionSpan.append(metadataRecipeSpan);
+	var authorRecipeSpan = $("<span>").addClass('author-recipe').text(recipe.source.name);
+	metadataRecipeSpan.append(authorRecipeSpan);
+	var bookmarksRecipe = $("<span>").addClass('bookmarks-recipe');
+	metadataRecipeSpan.append(bookmarksRecipe);
+	var iconBookmarks = $("<span>").addClass('icon-bookmark');
+	bookmarksRecipe.append(iconBookmarks);
+
+	// Anidando objetos al HTML
+	$(".list-recipes").append(recetaLink);
 }
 
 
