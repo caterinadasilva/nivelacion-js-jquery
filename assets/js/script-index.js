@@ -3,6 +3,12 @@ $(document).ready( function(){
 	// Función para mostrar y ocultar botones con íconos del menú.
 	$("#js-back").remove();
 
+	//Función que asigna el texto "NuevasRecetas"
+
+	(function printNews() {
+			$(".callout-news p").text('NUEVAS RECETAS');
+		})();
+
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
 
