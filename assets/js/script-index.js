@@ -1,5 +1,8 @@
 $(document).ready( function(){
 
+	// Función para mostrar y ocultar botones con íconos del menú.
+	$("#js-back").remove();
+
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
 
