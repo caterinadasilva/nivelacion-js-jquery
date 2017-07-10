@@ -88,8 +88,7 @@ function renderActivities(activitiesArray) {
 * archivo "templates/templates-activity.html"
 */
 function renderActivity(activity) {
-	console.log('Voy a pintar la actividad: ', activity);
-	
+	console.log('Voy a pintar la actividad: ', activity);	
 }
 
 
