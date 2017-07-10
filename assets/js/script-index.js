@@ -47,21 +47,25 @@ function renderRecipe(recipe) {
 
 	var attributionSpan = $("<span>").addClass('attribution');
 	recetaLink.append(attributionSpan);
+
 	var imgName = 'assets/img/recipes/320x350/'+ recipe.name +'.jpg';
 	console.log(imgName);
-	var imagen = $("img").attr('src', imgName);
+	var imagen = $("<img>").attr('src', imgName);
 	recetaLink.append(imagen);
 	console.log(recetaLink);
-	//por alguna razón, sólo me imprime la imagen del último artículo solamente
 
 	var titleRecipeSpan = $("<span>").addClass('title-recipe').text(recipe.title);
 	attributionSpan.append(titleRecipeSpan);
+
 	var metadataRecipeSpan = $("<span>").addClass('metadata-recipe');
 	attributionSpan.append(metadataRecipeSpan);
+
 	var authorRecipeSpan = $("<span>").addClass('author-recipe').text(recipe.source.name);
 	metadataRecipeSpan.append(authorRecipeSpan);
+
 	var bookmarksRecipe = $("<span>").addClass('bookmarks-recipe');
 	metadataRecipeSpan.append(bookmarksRecipe);
+
 	var iconBookmarks = $("<span>").addClass('icon-bookmark');
 	bookmarksRecipe.append(iconBookmarks);
 
@@ -69,17 +73,19 @@ function renderRecipe(recipe) {
 	$(".list-recipes").append(recetaLink);
 }
 
-
-
 /*
 * Función que se encarga de pintar todas las actividades
 */
 function renderActivities(activitiesArray) {
 	console.log('Activities: ', activitiesArray);
+	
+	if (activitiesArray.length > 0) {
+		activitiesArray.forEach( function(activity) {
+			renderActivity(activity);
+			$(".wrapper-message").remove();
+		});
+	}
 
-	activitiesArray.forEach( function(activity) {
-		renderActivity(activity);
-	});
 }
 
 /*
@@ -88,7 +94,9 @@ function renderActivities(activitiesArray) {
 * archivo "templates/templates-activity.html"
 */
 function renderActivity(activity) {
-	console.log('Voy a pintar la actividad: ', activity);	
+	console.log('Voy a pintar la actividad: ', activity);
+
+
 }
 
 

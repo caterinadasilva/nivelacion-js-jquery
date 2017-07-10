@@ -1053,7 +1053,6 @@ nav .nav-group.right {
   overflow: hidden;
   position: relative;
   width: 50%;
-  min-height: 200px;
 }
 .item-recipe .attribution {
   position: absolute;
