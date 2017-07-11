@@ -4,15 +4,13 @@ $(document).ready( function(){
 	$("#js-back").remove();
 
 	//Función que asigna el texto "NuevasRecetas"
-
 	(function printNews() {
-			$(".callout-news p").text('NUEVAS RECETAS');
-		})();
+		$(".callout-news p").text('NUEVAS RECETAS');
+	})();
 
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
 	renderActivities(activities);
-
 });
 
 
@@ -85,7 +83,6 @@ function renderActivities(activitiesArray) {
 			$(".wrapper-message").remove();
 		});
 	}
-
 }
 
 /*
@@ -129,7 +126,6 @@ function renderActivity(activity) {
 
 	// Anidado actividades al HTML
 	$(".list-activities").append(actividadLink);
-
 }
 
 
