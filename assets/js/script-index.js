@@ -69,7 +69,7 @@ function renderRecipe(recipe) {
 	var iconBookmarks = $("<span>").addClass('icon-bookmark');
 	bookmarksRecipe.append(iconBookmarks);
 
-	// Anidando objetos al HTML
+	// Anidando recetas al HTML
 	$(".list-recipes").append(recetaLink);
 }
 
@@ -96,6 +96,39 @@ function renderActivities(activitiesArray) {
 function renderActivity(activity) {
 	console.log('Voy a pintar la actividad: ', activity);
 
+	// Creando elementos HTML
+	var actividadLink = $("<a>").addClass('item-activity').attr('href', '#');
+
+	var attributionSpan = $("<span>").addClass('attribution');
+	actividadLink.append(attributionSpan);
+
+	var avatarSpan = $("<span>").addClass('avatar');
+	attributionSpan.append(avatarSpan);
+
+	var avatarImage = $("<img>").addClass('image-avatar').attr('src', activity.userAvatar);
+	avatarSpan.append(avatarImage);
+ 	
+	var metaSpan = $("<span>").addClass('meta');
+	attributionSpan.append(metaSpan);
+
+	var authorSpan = $("<span>").addClass('author').html(activity.userName);
+	metaSpan.append(authorSpan);
+
+	metaSpan.append(' made ');
+
+	var recipeSpan = $("<span>").addClass('recipe').html(activity.recipeName);
+	metaSpan.append(recipeSpan);
+
+	metaSpan.append(': ' + activity.text);
+
+	var locationSpan = $("<span>").addClass('location').html('&mdash;' + activity.place);
+	metaSpan.append(locationSpan);
+
+	var bgImgActividad = $("<div>").addClass('bg-image').attr('style', 'background-image: url("assets/' + activity.image + '")');
+	actividadLink.append(bgImgActividad);
+
+	// Anidado actividades al HTML
+	$(".list-activities").append(actividadLink);
 
 }
 
