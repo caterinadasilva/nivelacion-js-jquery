@@ -9,14 +9,17 @@ $(document).ready( function(){
 	$(".js-show-recipe").click(function(event) {
 		if ($("#container").hasClass('make')) {
 			$("#container").removeClass('make');
-			console.log("Se elimina clase make de #container")
+			console.log("Se elimina clase make de #container");
+			$(".js-show-recipe").addClass('active');
+			$(".js-show-make").removeClass('active');
 		}
 	});
 	$(".js-show-make").click(function(event) {
 		if (!$("#container").hasClass('make')) {
 			$("#container").addClass('make');
-			console.log("Se agrega clase make a #container")
+			console.log("Se agrega clase make a #container");
+			$(".js-show-make").addClass('active');
+			$(".js-show-recipe").removeClass('active');
 		}
 	});
-
 });
